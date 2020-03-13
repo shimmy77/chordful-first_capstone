@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import ChordForm from './ChordForm'
 import AddChords from './add-chords'
 
 export default class CreateSong extends Component {
-    static defaultProps = {
-        tabs: [],
+    constructor(props) {
+        super(props)
+        this.tabs = { 
+            title: '',
+            artist: '',
+            key: '',
+            tuning: '',
+            class: ''
+        }
+        this.handleSubmitTab = this.handleSubmitTab.bind(this)
+        this.handleSubmitTab = this.handleSubmitTab.bind(this)
     }
+
+        handleSubmitTab = (event) => {
+            event.preventDefault()
+            alert("Are you sure you want to add this tab?");
+        }
+        handleTab = (event) => {
+            this.setState({title: event.target.value});
+        }
     render() {
     const { tabs } = this.props
     const options = [
@@ -14,9 +32,11 @@ export default class CreateSong extends Component {
         { value: 'bass', label: 'Bass'},
     ];
     return (
-        <section className="CreateSong">
+        <section className="CreateTab">
             <h2> Create a song(tab) </h2>
+            {/* <Link to={'/create-tab/'}></Link>  */}
             <ChordForm>
+            <form onSubmit = {this.handleSubmitTab}>
                 <div className='field'>
                     <label htmlFor='song-title-input'>
                         Title: 
@@ -64,8 +84,8 @@ export default class CreateSong extends Component {
                     <br></br>
                     <textarea type='text' id='song-lyric-input' />
                 </div>
-                <AddChords>
-                </AddChords>
+                    <input type="submit" value="Add Tabs"  />
+               </form>
             </ChordForm>
         </section>
 

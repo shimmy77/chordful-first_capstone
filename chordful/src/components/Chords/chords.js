@@ -6,9 +6,9 @@ export default class Chords extends Component {
         tabs: [],
     }
     render() {
-        const { tabs } = this.props
+        
         return (
-            <Header></Header>
+            //<Header></Header>
             
 
         )
