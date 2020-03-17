@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, BrowserRouter as Router} from 'react-router-dom'
 import Header from './Header'
+import addNewSong from './add-new-song'
 //import './Styles/HomePage.css'
 
 export default class HomePage extends React.Component {

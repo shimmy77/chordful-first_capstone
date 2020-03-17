@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 
-export default class add_new_song extends React.Component {
+export default class addNewSong extends React.Component {
     render() {
         return (
             <Router>

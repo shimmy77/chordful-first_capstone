@@ -1,19 +1,21 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Home/Header'
-import add_new_song from './components/Home/add-new-song'
 import CreateSong from './components/Create_Song/create-song'
 import HomePage from './components/Home/HomePage'
 
 
 class App extends React.Component {
+  render
   render() {
     return (
+      <Router>
       <main className='App'>
         <HomePage />
         <Header />
-        <add_new_song /> 
         <CreateSong />
       </main>
+      </Router>
     );
   }
 }
