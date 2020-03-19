@@ -1,40 +1,57 @@
 import React, { Component } from 'react'
-import Header from './Header.js'
+import ApiContext from '../ApiContext'
+import config from '../../config'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default class Chords extends Component {
-    static defaultProps = {
-       onDeleteTabs: () => {},
+
+export default class Chords extends React.Component {
+    static defaultProps ={
+      onDeleteChord: () => {},
     }
     static contextType = ApiContext;
-
-    handleDelete = e => {
-        e.preventDefault() 
-        const chordId = this.props.id
-
-        fetch(`${config.API_ENDPOINT}/tabs/${chordId}`, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json'
-            },
-        })
+  
+    handleClickDelete = e => {
+      e.preventDefault()
+      const chordId = this.props.id
+  
+      fetch(`${config.API_ENDPOINT}/chords/${chordId}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
         .then(res => {
-            if (!res.ok) 
+          if (!res.ok)
             return res.json().then(e => Promise.reject(e))
-            return res.json()
+          return res.json()
         })
         .then(() => {
-            this.context.deleteChord(tabId)
-            this.props.onDeleteChords(tabId)
+          this.context.deleteChord(chordId)
+        
+          this.props.onDeleteChord(chordId)
         })
         .catch(error => {
-            console.error({ error })
+          console.error({ error })
         })
     }
+  
     render() {
-        
-        return (
-            
-
-        )
+      const { title, artist  } = this.props
+      return (
+        <div className='Chord'>
+          <h2 className='Chord__title'>
+          </h2>
+          <button
+            className='Chord__delete'
+            type='button'
+            onClick={this.handleClickDelete}
+          >
+            <FontAwesomeIcon icon='trash-alt' />
+            {' '}
+            remove
+          </button>
+        </div>
+      )
     }
-}
+  }
+      

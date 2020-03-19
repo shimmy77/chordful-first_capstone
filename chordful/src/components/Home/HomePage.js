@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, BrowserRouter as Router} from 'react-router-dom'
 import Header from './Header'
 import addNewSong from './add-new-song'
-//import './Styles/HomePage.css'
+
 
 export default class HomePage extends React.Component {
     render() {
@@ -10,10 +10,10 @@ export default class HomePage extends React.Component {
             <Router>
                 <Header></Header>
             <div class= "sidebar">
-                <a class="active"  href="#home"> Home </a>
-                <a href= "#chords"> Chords </a>
-                <a href= "#create-song"> Create Song </a>
-                <a href= "#about"> About</a>
+                <a href= "home"> Home </a>
+                <a href= "chords"> Chords </a>
+                <a href= "create-song"> Create Song </a>
+                <a href= "about"> About</a>
             </div>
          <div class="content">
             Welcome to Chordful! 
