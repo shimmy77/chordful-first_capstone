@@ -21,7 +21,7 @@ state = {
     return (
       <ApiContext.Provider value = {value}>
       <Switch>
-      <Route path={'/home'} component={HomePage}/>
+      <Route path={'/'} component={HomePage}/>
       <Route path={'/chordlist'} component={ChordList}/> 
       <Route path={'/create-song'} component={CreateSong}/>
       </Switch>

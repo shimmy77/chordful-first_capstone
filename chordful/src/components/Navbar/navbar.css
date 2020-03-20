@@ -1,0 +1,8 @@
+nav {
+    display: flex;
+    
+}
+
+.navbar:link {
+    align-items: space-between;
+}
