@@ -1,0 +1,16 @@
+* {
+    font-family: cursive;
+  }
+  
+  body {
+    background-color: rgb(65, 118, 161);
+  }
+
+  div {
+      text-align: center;
+  }
+
+  footer {
+      align-items: center;
+  }
+  

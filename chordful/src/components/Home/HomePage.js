@@ -13,13 +13,13 @@ export default class HomePage extends React.Component {
             <header> <h1> Chordful</h1>  </header>
             {/* <Navbar>
             </Navbar> */}
-            <nav class= "navbar">
-                <Link to= '/home'> Home </Link>
+            <nav className= "navbar">
+                <Link to= '/'> Home </Link>
                 <Link to= '/chordlist'> Chords </Link>
                 <Link to= '/create-song'> Create Song </Link>
                 <a href= "about"> About</a>  
             </nav>
-         <div class="welcome">
+         <div className="welcome">
             Welcome to Chordful! 
             <br></br>
             You can add songs and put chords on them. 

@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ApiContext from '../ApiContext'
 import config from '../../config'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default class Chords extends React.Component {
@@ -46,8 +45,6 @@ export default class Chords extends React.Component {
             type='button'
             onClick={this.handleClickDelete}
           >
-            <FontAwesomeIcon icon='trash-alt' />
-            {' '}
             Delete Chord
           </button>
         </div>

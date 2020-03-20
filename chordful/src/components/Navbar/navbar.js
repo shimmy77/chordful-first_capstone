@@ -7,7 +7,7 @@ export default class Navbar extends React.Component {
         return (
             <>
             <nav class= "navbar">
-                <Link to= '/home'> Home </Link>
+                <Link to= '/'> Home </Link>
                 <Link to= '/chordlist'> Chords </Link>
                 <Link to= "/create-song"> Create Song </Link>
                 <a href= "about"> About</a>  

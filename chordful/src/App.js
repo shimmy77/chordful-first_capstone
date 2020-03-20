@@ -4,6 +4,7 @@ import Header from './components/Home/Header'
 import CreateSong from './components/Create_Song/create-song'
 import HomePage from './components/Home/HomePage'
 import ChordList from './components/Chords/chordlist'
+import ChordView from './components/Chords/chordview'
 import Chords from './components/Chords/chords'
 import chords from './dummy-chords'
 import ApiContext from './components/ApiContext'
@@ -21,9 +22,10 @@ state = {
     return (
       <ApiContext.Provider value = {value}>
       <Switch>
-      <Route path={'/'} component={HomePage}/>
-      <Route path={'/chordlist'} component={ChordList}/> 
-      <Route path={'/create-song'} component={CreateSong}/>
+        <Route exact path={'/'} component={HomePage}/>
+        <Route exact path={'/chordlist'} component={ChordList}/> 
+        <Route path={'/create-song'} component={CreateSong}/>
+        <Route path={'/chords'} component={ChordView}/>
       </Switch>
      </ApiContext.Provider> 
      // <main className='App'>

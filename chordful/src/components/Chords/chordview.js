@@ -2,9 +2,10 @@ import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import Chords from './chords'
+import { findChord } from './chords-helpers'
 
 
-export default class ChordList extends React.Component {
+export default class ChordView extends React.Component {
     static defaultProps = {
         match: {
           params: {}
@@ -14,25 +15,30 @@ export default class ChordList extends React.Component {
     
       render() {
         const { chords=[] } = this.context
+        const { chordId } = this.props.match.params
+        const chord = findChord(chords, chordId) || { lyrics: ''}
         console.log(chords)
         return (
-          <section className='ChordList'>
+          <section className='ChordView'>
             <ul>
-              <Link to='/`${chord.title}`'> </Link>
               {chords.map(chord => 
                 <li key={chord.id}>
                   <Chords 
                     id={chord.id}
                     title={chord.title}
                     artist={chord.artist}
-                    
+                    key={chord.key}
+                    tuning={chord.tuning}
+                    lyrics={chord.lyrics}
+
                   />
                 </li>
                 )}
             </ul>
-            <div className='ChordList__button-container'>
-              <Link to='/create-song'> Add Chords </Link>
-      
+            <div className='ChordView__content'>
+             {chord.content.split(/\n \r|\n/).map((para, i) =>
+            <p key={i}>{para}</p>
+             )}
             </div>
           </section>
         )

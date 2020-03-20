@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import ChordForm from './ChordForm'
 import AddChords from './add-chords'
+import Navbar from '../Navbar/navbar'
+import './create-song.css'
 
 export default class CreateSong extends Component {
   static defaultProps = {
@@ -16,7 +18,7 @@ export default class CreateSong extends Component {
             event.preventDefault()
             alert("Are you sure you want to add this tab?");
             const newChord = {
-                //chordId: event.target['chord-chord-id'].value,
+                chordId: event.target['chord-id'].value,
                 title: event.target['chord-title'].value,
                 artist: event.target['chord-artist'].value,
                 key: event.target['chord-key'].value,
@@ -47,12 +49,10 @@ export default class CreateSong extends Component {
             this.setState({title: event.target.value});
         }
     render() {
-     const { chords } = this.props
-  
     return (
         <section className="CreateTab">
             <h2> Create a song(tab) </h2>
-            {/* <Link to={'/create-tab/'}></Link>  */}
+    
             <ChordForm>
             <form onSubmit = {this.handleSubmitChord}>
                 <div className='field'>
@@ -94,7 +94,9 @@ export default class CreateSong extends Component {
                     <AddChords />
                </form>
             </ChordForm>
-
+            <footer>
+    
+            </footer>
         </section>
 
     )}
