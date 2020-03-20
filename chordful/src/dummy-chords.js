@@ -7,10 +7,10 @@
         "tuning": "EADGBE",
         "lyrics": "A"
      },
-     {
-        "id": "cbc789a0-ffaf-11e8-8eb2-f2804f1b9fd1",
-        "title": "Can't Stop",
-        "artist": "RHCP",
-     }
+   //   {
+   //      "id": "cbc789a0-ffaf-11e8-8eb2-f2804f1b9fd1",
+   //      "title": "Can't Stop",
+   //      "artist": "RHCP",
+   //   }
     ]
 export default chords

@@ -4,6 +4,7 @@ import ApiContext from '../ApiContext'
 import Chords from './chords'
 
 
+
 export default class ChordList extends React.Component {
     static defaultProps = {
         match: {
@@ -18,7 +19,7 @@ export default class ChordList extends React.Component {
         return (
           <section className='ChordList'>
             <ul>
-              <Link to='/`${chord.title}`'> </Link>
+              <Link to='/chords'> Chords </Link>
               {chords.map(chord => 
                 <li key={chord.id}>
                   <Chords 

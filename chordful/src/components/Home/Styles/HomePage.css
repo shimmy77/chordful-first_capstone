@@ -6,6 +6,6 @@ body {
   background-color: rgb(65, 118, 161);
 }
 
-nav {
-  align-content: center;
+.navbar {
+  text-align: center;
 }

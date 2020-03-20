@@ -36,9 +36,7 @@ export default class ChordView extends React.Component {
                 )}
             </ul>
             <div className='ChordView__content'>
-             {chord.content.split(/\n \r|\n/).map((para, i) =>
-            <p key={i}>{para}</p>
-             )}
+             
             </div>
           </section>
         )
