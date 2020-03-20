@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AddChords from '../Create_Song/add-chords'
 import ApiContext from '../ApiContext'
 import Chords from './chords'
@@ -16,27 +15,27 @@ export default class ChordList extends React.Component {
     
       render() {
         const { chords=[] } = this.context
+        console.log(chords)
         return (
           <section className='ChordList'>
             <ul>
-                <li key={chords.id}>
+              {chords.map(chord => 
+                <li key={chord.id}>
                   <Chords
-                    id={chords.id}
-                    artist={chords.artist}
+                    id={chord.id}
+                    title={chord.title}
+                    artist={chord.artist}
                   />
                 </li>
+                )}
             </ul>
             <div className='ChordList__button-container'>
-              <AddChords
+              <Link to='/create-song'> Add Chords </Link>
+              {/* <AddChords
                 tag={Link}
                 to='/create-song'
                 type='button'
-                className='ChordList__add-chord-button'
-              >
-                <FontAwesomeIcon icon='plus' />
-                <br />
-                Chords
-              </AddChords>
+                className='ChordList__add-chord-button'/> */}
             </div>
           </section>
         )

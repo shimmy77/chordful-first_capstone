@@ -39,7 +39,7 @@ export default class Chords extends React.Component {
       const { title, artist  } = this.props
       return (
         <div className='Chord'>
-          <h2 className='Chord__title'>
+          <h2 className='Chord__title'> {title} by {artist}
           </h2>
           <button
             className='Chord__delete'
@@ -48,7 +48,7 @@ export default class Chords extends React.Component {
           >
             <FontAwesomeIcon icon='trash-alt' />
             {' '}
-            remove
+            Delete Chord
           </button>
         </div>
       )

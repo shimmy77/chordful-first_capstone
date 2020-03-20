@@ -7,12 +7,12 @@ import addNewSong from './add-new-song'
 export default class HomePage extends React.Component {
     render() {
         return (
-            <Router>
-                <Header></Header>
+            <>
+            <Header></Header>
             <div class= "sidebar">
-                <a href= "home"> Home </a>
-                <a href= "chords"> Chords </a>
-                <a href= "create-song"> Create Song </a>
+                <Link to= '/home'> Home </Link>
+                <Link to= '/chordlist'> Chords </Link>
+                <Link to= "/create-song"> Create Song </Link>
                 <a href= "about"> About</a>
             </div>
          <div class="content">
@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
          <div class= "createbar">
              <a href= "#add-song"> Add Song </a>
          </div>
-         </Router>
+         </>
         )
     }
 }
